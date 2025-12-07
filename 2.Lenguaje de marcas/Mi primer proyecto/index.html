@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera página</title>
+</head>
+
+<body>
+    <!-- Este es el título de mi página-->
+    <h1>Pepinillos Manolo<h1></h1>
+        <h1>Manolo</h1>
+        <h3>Probando probando</h3>
+        <p>Esto es una página de pepinillos en vinagre</p>
+        <a href="https://www.google.com" target="=_blank"> Clic para ir a Google</a>
+        <img src="pepino.jpg" width="350" height="250" alt="pepinillos verdes" title="Logo pepino">
+
+        <ul>
+
+            <h2>Tipos de pepino</h2>
+            <li>Pepino albino</li>
+            <li>Pepino chino</li>
+            <li>Pepino moreno</li>
+            <li>Pepino pequeño</li>
+        </ul>
+        <table border="1">
+
+            <h2>LISTA DE PEDIDOS</h2>
+            <thead>
+                <tr>
+                    <th>Nº PEDIDO</th>
+                    <th>FECHA</th>
+                    <th>IMPORTE</th>
+                    <th>VER</th>
+                    <th colspan="2">ACCION</th>
+                </tr>
+
+                <tr>
+                    <td>#123</td>
+                    <td>12/12/2025</td>
+                    <td>225€</td>
+                    <td>clic</td>
+                    <td>editar</td>
+                    <td>borrar</td>
+
+                </tr>
+                <td>#123</td>
+                <td>12/12/2025</td>
+                <td>225€</td>
+                <td>clic</td>
+                <td>editar</td>
+                <td>borrar</td>
+                <tr>
+                    <td>#123</td>
+                    <td>12/12/2025</td>
+                    <td>225€</td>
+                    <td>clic</td>
+                    <td>editar</td>
+                    <td>borrar</td>
+                </tr>
+                <td>#123</td>
+                <td>12/12/2025</td>
+                <td>225€</td>
+                <td>clic</td>
+                <td>editar</td>
+                <td>borrar</td>
+                <tr>
+                    <td>#123</td>
+                    <td>12/12/2025</td>
+                    <td>225€</td>
+                    <td>clic</td>
+                    <td>editar</td>
+                    <td>borrar</td>
+                </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="6">Total pedidos:6</td>
+                </tr>
+            </tfoot>
+            </thead>
+
+        </table>
+        <br><br>
+        <form id="contact-form">
+
+            <fieldset>
+
+                <legend>Datos básicos</legend>
+                <label>Nombre:
+                    <input type="text" placeholder="Escribe aqui tu nombre" required>
+                </label>
+                <br><br>
+                <label>Edad
+                    <input type="number" min="2" max="90" step="0.5" placeholder="Escribe aqui tu edad">
+                </label>
+                <br><br>
+                <label>Fecha nacimiento:
+                    <input type="date" placeholder="Escribe aqui tu fecha">
+                </label>
+                <p></p>
+                <label>Email:
+                    <input type="email" placeholder="Escribe aqui tu email">
+                </label>
+                <p></p>
+                <label>Teléfono:
+                    <input type="tel" placeholder="Escribe aqui tu teléfono">
+                </label>
+                <p></p>
+                <label>Contraseña:
+                    <input type="password" minlength="8" placeholder="Escribe aqui tu contraseña">
+                </label>
+                <p></p>
+                <button type="submit">Enviar</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Fecha, hora y número</legend>
+
+                <label>Hora de inicio:
+                    <input type="time" step="60">
+                </label>
+                <p></p>
+
+                <label>Cita
+                    <input type="datetime-local">
+                </label>
+                <p></p>
+
+                <label>Mes
+                    <input type="month">
+                </label>
+                <p></p>
+
+                <label>Semana
+                    <input type="week">
+                </label>
+                <p></p>
+
+                <label>Prioridad
+                    <input type="range" max="100" min="0" value="50"
+                        oninput="document.getElementById('valorRango').value=this.value">
+                </label>
+                <output id="valorRango">50</output>
+                <p></p>
+
+                <label>Color Favorito
+                    <input type="color" value="#555555">
+                </label>
+                <p></p>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Opciones y listas</legend>
+
+                <fieldset>
+                    <input type="radio" name="tipo_pepino" value="moreno">
+                    <label>Moreno</label>
+
+                    <input type="radio" name="tipo_pepino" value="kirby" checked>
+                    <label>Kirby</label>
+
+                    <input type="radio" name="tipo_pepino" value="rubio">
+                    <label>Rubio</label>
+                </fieldset>
+                <p></p>
+
+                <fieldset>
+                    <input type="checkbox" name="extras" value="ketchup">
+                    <label>ketchup</label>
+                    <p></p>
+
+                    <input type="checkbox" name="extras" value="costilleta">
+                    <label>Costilleta</label>
+                    <p></p>
+                    <input type="checkbox" name="extras" value="nocilla">
+                    <label>Nocilla</label>
+
+                </fieldset>
+                <p></p>
+                <label>Variedad</label>
+                <select id="variedadPepino" name="variedadPepino">
+                    <option value="sinOpcion">---------</option>
+                    <optgroup label="Clásicos"> 
+                    <option value="Holandes">Holandés</option>
+                    <option value="Espanol">Español</option>
+                    </optgroup>
+                    <optgroup label="Exclusivos">
+                    <option value="Marroquí">Marruecos</option>
+                     <option value="Rumano">Rumano</option>
+                                        </optgroup>
+
+                </select>
+
+                <p></p>
+                <p></p>
+
+                <label>Lotes (puedes elegir varios)</label>
+                <select name="lotes[]" id="Lotes" multiple size="4">
+                    <option value="lote 1">Lote 1</option>
+                    <option value="lote 2">Lote 2</option>
+                    <option value="lote 3">Lote 3</option>
+                    <option value="lote 4">Lote 4</option>
+                     <option value="lote 5">Lote 5</option>
+                    <option value="lote 6">Lote 6</option>
+                    <option value="lote 7">Lote 7</option>
+                    <option value="lote 8">Lote 8</option>
+                
+                   
+
+                </select>
+           </fieldset>
+
+<fieldset>
+
+<legend>Texto y archivos</legend>
+<label>Observaciones:</label>
+<textarea rows="5" cols="50" placeholder="Escribe aquí tus comentarios" resize:"none"></textarea>
+<p></p>
+<label>Adjuntar factura:</label>
+<p></p>
+<input type="file" accept=".img,.doc,.pdf" multiple>
+<p></p>
+<label>Cargando fichero</label>
+<progress value="72" max="100"></progress>
+
+
+</fieldset>
+
+<button type="submit"  >Enviar</button>
+        </form>
+
+
+
+
+
+</body>
+<p></p>
+<p></p>
+<footer>Nuestra página web 2025</footer>
+
+</html>
