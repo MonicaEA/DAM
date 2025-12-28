@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallumbos Ciruelo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- INICIO -->
+  <header id="inicio">
+    <img src="logoGallumbosCiruelo.png" alt="Logo Gallumbos Ciruelo" class="logo">
+    <h1>Comodidad que se lleva por dentro</h1>
+  </header>
+
+  <!-- MENÚ -->
+  <nav class="nav">
+    <ul class="nav-lista">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#coleccion">Colección</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+
+    <!-- SOBRE NOSOTROS -->
+    <section class="sobre-nosotros" id="sobre-nosotros">
+      <h2>Sobre <span class="marca">Gallumbos Ciruelo</span></h2>
+
+      <p><strong>Gallumbos Ciruelo</strong> es la marca de gallumbos para quienes
+        pasan del aburrimiento y quieren comodidad brutal sin perder el buen rollo.</p>
+
+      <p>Va dirigida a gente joven (y no tan joven) que se mueve todo el día:
+        clase, curro, quedadas… y necesita ropa interior que aguante el ritmo
+        sin apretar ni molestar.</p>
+
+      <p>Nos diferenciamos de otras marcas porque mezclamos
+        <em>tejidos cómodos, colores llamativos y diseños con personalidad</em>.
+        Nada de gallumbos sosos: aquí hasta lo que no se ve tiene estilo.</p>
+
+      <figure>
+        <figcaption>
+          <img src="tira comic.png" alt="comic divertido sobre la marca" class="tira-comic"> &copy; Mónica Espiñeira
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- COLECCIÓN (sección destacada) -->
+    <section class="destacado" id="coleccion">
+      <a href="#productos" class="caja-destacada enlace-destacado">
+        <h2>Diseño Ergonómico</h2>
+        <p>Nuestra tecnología "FreedomFit" se adapta a tu cuerpo sin apretar.</p>
+      </a>
+      <a href="#contacto" class="caja-destacada enlace-destacado">
+        <h2>¿Tienes dudas?</h2>
+        <p>Escríbenos y te ayudamos a elegir tu gallumbo perfecto.</p>
+      </a>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="productos" id="productos">
+      <h2>Nuestros gallumbos</h2>
+
+      <div class="lista-productos">
+
+        <article class="tarjeta">
+          <h3><a href="#coleccion" class="titulo-link">Modelo Gamer Boy</a></h3>
+          <img src="gamer.png" class="producto-img" alt="Modelo Gamer Boy">
+          <p>Gallumbo morado de algodón suave para el día a día. Comodidad en tus largas horas de partidas.</p>
+          <p class="precio">14,99 €</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3><a href="#coleccion" class="titulo-link">Modelo Fontanero</a></h3>
+          <img src="fontanero.png" class="producto-img" alt="Modelo Fontanero">
+          <p>Gallumbo azul. Haz que tus jornadas de trabajo sean más confortables,
+             y si se te bajan los pantalones serás el rey.</p>
+          <p class="precio">14,99 €</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3><a href="#coleccion" class="titulo-link">Modelo 1000 y 1 noches</a></h3>
+          <img src="1000y1noches.png" class="producto-img" alt="Modelo 1000 y 1 noches">
+          <p>Gallumbo morado estampado estelar. El ideal para ver las estrellas con tus citas de Tinder.</p>
+          <p class="precio">14,99 €</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3><a href="#coleccion" class="titulo-link">Modelo Percebes</a></h3>
+          <img src="percebes.png" class="producto-img" alt="Modelo Percebes">
+          <p>Gallumbo verde. No hay nada más patriótico que el producto local, siéntete orgulloso de tu percebe.</p>
+          <p class="precio">14,99 €</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+      <h2>Contáctanos</h2>
+
+      <form class="form-contacto">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="tipo">Tipo de consulta</label>
+        <select id="tipo" name="tipo">
+          <option value="duda">Duda sobre tallas</option>
+          <option value="pedido">Pedido o envío</option>
+          <option value="colaboracion">Colaboración</option>
+          <option value="otro">Otra consulta</option>
+        </select>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar consulta</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 Gallumbos Ciruelo. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
