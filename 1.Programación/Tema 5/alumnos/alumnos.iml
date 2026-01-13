@@ -7,15 +7,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lombok8" level="project" />
+    <orderEntry type="library" name="lombok2" level="project" />
+    <orderEntry type="library" name="lombok5" level="project" />
+    <orderEntry type="library" name="lombok7" level="project" />
     <orderEntry type="library" name="lombok" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/26.0.2/annotations-26.0.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="lombok3" level="project" />
+    <orderEntry type="library" name="lombok4" level="project" />
+    <orderEntry type="library" name="lombok9" level="project" />
+    <orderEntry type="library" name="lombok6" level="project" />
   </component>
 </module>
