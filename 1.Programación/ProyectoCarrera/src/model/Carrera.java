@@ -13,7 +13,19 @@ public class Carrera {
 
         }
 
-        
+    public int getKmTotales() {
+        return kmTotales;
+    }
 
+    public void setKmTotales(int kmTotales) {
+        this.kmTotales = kmTotales;
+    }
 
+    public ArrayList<Coche> getCoches() {
+        return coches;
+    }
+
+    public void setCoches(ArrayList<Coche> coches) {
+        this.coches = coches;
+    }
 }

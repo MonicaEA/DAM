@@ -3,7 +3,9 @@ package model;
 public class Coche {
     private String marca;
     private String modelo;
-    private int km;
+    private int dorsal;
+    private String piloto;
+    private int kmTotales;
     private int puntosTotales;
     private int primerPuesto;
     private int segundoPuesto;
@@ -16,6 +18,7 @@ public class Coche {
         this.modelo = modelo;
 
 
+
     }
 
     public void avanzarKm(int km){
@@ -24,7 +27,7 @@ public class Coche {
     }
 
     public void resetKm(){
-        km =0;
+        kmTotales =0;
 
     }
 
@@ -46,6 +49,16 @@ public class Coche {
         tercerPuesto++;
     }
 
+
+    @Override
+    public String toString() {
+        return "Dorsal " + dorsal +
+                " - " + piloto +
+                " (" + marca + " " + modelo + ")" +
+                " | Km: " + kmTotales +
+                " | Puntos: " + puntosTotales;
+    }
+
     public String getModelo() {
         return modelo;
     }
@@ -54,12 +67,12 @@ public class Coche {
         return marca;
     }
 
-    public int getKm() {
-        return km;
+    public int getKmTotales() {
+        return kmTotales;
     }
 
-    public void setKm(int km) {
-        this.km = km;
+    public void setKmTotales(int kmTotales) {
+        this.kmTotales = kmTotales;
     }
 
     public int getPuntosTotales() {
@@ -92,5 +105,21 @@ public class Coche {
 
     public void setTercerPuesto(int tercerPuesto) {
         this.tercerPuesto = tercerPuesto;
+    }
+
+    public String getPiloto() {
+        return piloto;
+    }
+
+    public void setPiloto(String piloto) {
+        this.piloto = piloto;
+    }
+
+    public int getDorsal() {
+        return dorsal;
+    }
+
+    public void setDorsal(int dorsal) {
+        this.dorsal = dorsal;
     }
 }

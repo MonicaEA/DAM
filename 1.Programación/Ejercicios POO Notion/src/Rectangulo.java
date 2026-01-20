@@ -1,33 +1,35 @@
 import java.util.Scanner;
 
 public class Rectangulo {
+    /*Crea una clase Rectangulo con atributos base y altura.
+     Añade métodos calcularArea() y calcularPerimetro() que devuelvan el área y el perímetro respectivamente.
+     Crea un objeto y muestra los resultados.
+     */
 
     private int base;
     private int altura;
-    public Rectangulo() {
+    private int area;
+    private int perimetro;
+
+    public Rectangulo(int base,int altura){
+        this.base = base;
+        this.altura = altura;
 
     }
 
-    public void calcularArea(Scanner scanner){
-        System.out.println("Introduce la base en centímetros : ");
-        base= scanner.nextInt();
 
-        System.out.println("Introduce la altura en centímetros : ");
-        altura= scanner.nextInt();
-        int area = base * altura;
-        System.out.println("El calculo del area es : "+area+ "cm2.");
-        System.out.println("Base usada: "+getBase() + " cm.");
-        System.out.println("Altura usada: "+getAltura() + " cm.");
+    public int calcularArea(){
+
+        area = base*altura;
+        return area;
 
     }
 
-    public void calcularPerimetro(){
-        System.out.println("+++++++  PERÍMETRO  +++++++");
-        System.out.println("El calculo del perímetro de este rectangulo es........");
-        int perimetro = 2*(base*altura);
-        System.out.println(perimetro + " CM.");
+    public  int calcularPerimetro(){
 
+        perimetro = 2*(base+altura);
 
+        return perimetro;
     }
 
     public int getBase() {
@@ -45,5 +47,4 @@ public class Rectangulo {
     public void setAltura(int altura) {
         this.altura = altura;
     }
-
 }

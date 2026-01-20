@@ -1,27 +1,25 @@
 public class Libro {
-/*Crea una clase Libro con atributos titulo, autor y paginas. Implementa tres constructores:
- uno sin parámetros (valores por defecto), uno con título y autor, y otro con los tres parámetros.
- Crea tres objetos usando cada constructor y muestra sus datos.
- */
 
     private String titulo;
     private String autor;
     private int paginas;
 
-
-    public Libro(String titulo,String autor, int paginas){
-        this.titulo = titulo;
-        this.autor = autor;
-        this.paginas = paginas;
+    public Libro() {
+        this.titulo= "Sin titulo";
+        this.autor = "Desconocido.";
 
     }
 
     public Libro(String titulo, String autor){
-        this.titulo = titulo;
+        this.titulo= titulo;
         this.autor = autor;
+
     }
 
-    public Libro(){
+    public Libro(String titulo, String autor, int paginas){
+        this.titulo= titulo;
+        this.autor = autor;
+        this.paginas= paginas;
 
     }
 
