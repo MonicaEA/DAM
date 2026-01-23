@@ -4,122 +4,92 @@ public class Coche {
     private String marca;
     private String modelo;
     private int dorsal;
-    private String piloto;
-    private int kmTotales;
-    private int puntosTotales;
+    private int km;
+    private int puntos;
     private int primerPuesto;
     private int segundoPuesto;
     private int tercerPuesto;
 
-
-
-    public Coche(String marca, String modelo){
+    public Coche(String marca, String modelo, int dorsal) {
         this.marca = marca;
         this.modelo = modelo;
-
-
-
+        // el dorsal lo voy a usar para desempatar, el más bajo en caso de empate gana.
+        this.dorsal = dorsal;
+        this.km = 0;
+        this.puntos = 0;
+        // esto me va a servir para sumar los podios.
+        this.primerPuesto = 0;
+        this.segundoPuesto = 0;
+        this.tercerPuesto = 0;
     }
 
-    public void avanzarKm(int km){
-        km = (int) (Math.random() * (50 - 20 + 1)) + 20;
-
-    }
-
-    public void resetKm(){
-        kmTotales =0;
-
+    public void avanzarKm() {
+        km += (int)(Math.random() * 31) + 20;   // suma km entre 20 y 50
     }
 
     public void addPuntos(int puntos){
-    this.puntosTotales += puntos;
-
-
+        this.puntos += puntos;     // suma a los puntos que ya tenía
     }
 
-    public void primerPuesto (){
+    public void resetKm(){
+        km = 0;                    // deja el contador de km a cero para la nueva carrera
+    }
+
+    public void addPrimerPuesto(){
         primerPuesto++;
     }
 
-    public void segundoPuesto (){
+    public void addSegundoPuesto(){
         segundoPuesto++;
     }
 
-    public void tercerPuesto (){
+    public void addTercerPuesto(){
         tercerPuesto++;
     }
 
-
     @Override
     public String toString() {
-        return "Dorsal " + dorsal +
-                " - " + piloto +
-                " (" + marca + " " + modelo + ")" +
-                " | Km: " + kmTotales +
-                " | Puntos: " + puntosTotales;
-    }
-
-    public String getModelo() {
-        return modelo;
+        return "#" + dorsal + " - " + marca + " " + modelo +
+                " | puntos: " + puntos +
+                " | podios: " + primerPuesto + "-" + segundoPuesto + "-" + tercerPuesto;
     }
 
     public String getMarca() {
-        return marca;
-    }
+        return marca; }
 
-    public int getKmTotales() {
-        return kmTotales;
-    }
+    public void setMarca(String marca) {
+        this.marca = marca; }
 
-    public void setKmTotales(int kmTotales) {
-        this.kmTotales = kmTotales;
-    }
+    public String getModelo() {
+        return modelo; }
 
-    public int getPuntosTotales() {
-        return puntosTotales;
-    }
-
-    public void setPuntosTotales(int puntosTotales) {
-        this.puntosTotales = puntosTotales;
-    }
-
-    public int getPrimerPuesto() {
-        return primerPuesto;
-    }
-
-    public void setPrimerPuesto(int primerPuesto) {
-        this.primerPuesto = primerPuesto;
-    }
-
-    public int getSegundoPuesto() {
-        return segundoPuesto;
-    }
-
-    public void setSegundoPuesto(int segundoPuesto) {
-        this.segundoPuesto = segundoPuesto;
-    }
-
-    public int getTercerPuesto() {
-        return tercerPuesto;
-    }
-
-    public void setTercerPuesto(int tercerPuesto) {
-        this.tercerPuesto = tercerPuesto;
-    }
-
-    public String getPiloto() {
-        return piloto;
-    }
-
-    public void setPiloto(String piloto) {
-        this.piloto = piloto;
-    }
+    public void setModelo(String modelo) {
+        this.modelo = modelo; }
 
     public int getDorsal() {
-        return dorsal;
-    }
+        return dorsal; }
 
     public void setDorsal(int dorsal) {
-        this.dorsal = dorsal;
-    }
+        this.dorsal = dorsal; }
+
+    public int getKm() {
+        return km; }
+
+    public void setKm(int km) {
+        this.km = km; }
+
+    public int getPuntos() {
+        return puntos; }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos; }
+
+    public int getPrimerPuesto() {
+        return primerPuesto; }
+
+    public int getSegundoPuesto() {
+        return segundoPuesto; }
+
+    public int getTercerPuesto() {
+        return tercerPuesto; }
 }

@@ -4,28 +4,19 @@ import java.util.ArrayList;
 
 public class Carrera {
 
-    private int kmTotales;
-    private ArrayList<Coche> coches;
+    private int kmCarrera;
+    private ArrayList<Coche> cochesCarrera;
 
-        public Carrera(int kmTotales,ArrayList<Coche>coches ){
-            this.kmTotales = kmTotales;
-            this.coches = new ArrayList<>(coches);
-
-        }
-
-    public int getKmTotales() {
-        return kmTotales;
+    public Carrera(int kmCarrera, ArrayList<Coche> cochesCarrera) {
+        this.kmCarrera = kmCarrera;
+        this.cochesCarrera = new ArrayList<>(cochesCarrera); // copia defensiva
     }
 
-    public void setKmTotales(int kmTotales) {
-        this.kmTotales = kmTotales;
+    public int getKmCarrera() {
+        return kmCarrera;
     }
 
-    public ArrayList<Coche> getCoches() {
-        return coches;
-    }
-
-    public void setCoches(ArrayList<Coche> coches) {
-        this.coches = coches;
+    public ArrayList<Coche> getCochesCarrera() {
+        return cochesCarrera;
     }
 }

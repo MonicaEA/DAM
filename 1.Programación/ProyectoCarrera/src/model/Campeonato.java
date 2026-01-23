@@ -3,25 +3,24 @@ package model;
 import java.util.ArrayList;
 
 public class Campeonato {
-    ArrayList<Coche> coches;
-    ArrayList<Carrera>carreras;
 
+    private ArrayList<Coche> cochesCampeonato;
+    private ArrayList<Carrera> carrerasCampeonato;
 
-    public Campeonato(ArrayList<Coche> coches, ArrayList<Carrera> carreras) {
-        this.coches = coches;
-        this.carreras = carreras;
+    public Campeonato(ArrayList<Coche> coches) {
+        this.cochesCampeonato = new ArrayList<>(coches);
+        this.carrerasCampeonato = new ArrayList<>();
     }
 
     public void addCarrera(Carrera carrera){
-        carreras.add(carrera);
-
+        carrerasCampeonato.add(carrera);
     }
 
-    public ArrayList<Coche> getCoches() {
-        return coches;
+    public ArrayList<Coche> getCochesCampeonato() {
+        return cochesCampeonato;
     }
 
-    public ArrayList<Carrera> getCarreras() {
-        return carreras;
+    public ArrayList<Carrera> getCarrerasCampeonato() {
+        return carrerasCampeonato;
     }
 }
