@@ -2,32 +2,36 @@ package model;
 
 public class Alumno {
 
-    private String nombre, apellido , dni;
+    private String nombre, apellido, dni;
     private int nota;
 
-
-    public Alumno(String nombre, String apellido, String dni, int nota) {
+    public Alumno(String nombre, String apellido, String dni, int nota){
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.nota = nota;
-
-
-
     }
-// mismo metodo pero con datos diferentes, esto se llama sobrecarga, en vez de llamar a todos los this, hago asi y llama al de arriba con la modificacion en int nota
-    public Alumno(String nombre, String apellido, String dni) {
-        this(nombre,apellido,dni,-1);
 
-
-
+    // sobrecarga
+    public Alumno(String nombreP, String apellidoP, String dniP){
+        this(nombreP,apellidoP,dniP,-1);
+        /*this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.nota = -1;*/
     }
 
     public void mostrarDatos(){
-        System.out.println("Nombre: "+nombre);
-
+        System.out.println("nombre = " + nombre);
+        System.out.println("apellido = " + apellido);
+        System.out.println("dni = " + dni);
+        System.out.println("nota = " + nota);
     }
 
+    public void calcularRestante(){
+        int restante = 100-nota;
+        System.out.println(restante);
+    }
 
     public String getNombre() {
         return nombre;
