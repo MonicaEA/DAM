@@ -2,6 +2,7 @@ package controller;
 
 import model.Libro;
 import model.Multimedia;
+import model.Video;
 
 import java.util.ArrayList;
 
@@ -60,8 +61,44 @@ public class Gestor {
 
          }
 
+    public void buscarAutor(String autor) {
+        for (int i = 0; i < listaGeneral.size(); i++) {
 
-         public void listarColeccion(){
+            if (autor.equals(listaGeneral.get(i).getAutor())) {
+              listaGeneral.get(i).mostrarDatos();
+            }else {
+                System.out.println("Autor no encontrado");
+            }
+        }
+    }
+
+
+    public void buscarDirector(String director) {
+        for (int i = 0; i < listaGeneral.size(); i++) {
+            Multimedia item = listaGeneral.get(i);
+            if (item instanceof Video) {
+                Video video = (Video) item;
+                if (director.equals(video.getDirector())) {
+                    video.mostrarDatos();
+                }
+            }
+        }
+    }
+
+    public void buscarActor(String actor) {
+        for (int i = 0; i < listaGeneral.size(); i++) {
+            Multimedia item = listaGeneral.get(i);
+            if (item instanceof Video) {
+                Video video = (Video) item;
+                if (actor.equals(video.getActores())) {
+                    video.mostrarDatos();
+                }
+            }
+        }
+    }
+
+
+    public void listarColeccion(){
 
           listaGeneral.forEach(Multimedia::mostrarDatos);
 
