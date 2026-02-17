@@ -2,99 +2,187 @@ package controller;
 
 import model.Alumno;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import javax.lang.model.type.MirroredTypeException;
+import java.util.*;
+import java.util.function.BiPredicate;
 
 public class Gestor {
-
-    private ArrayList<Alumno> alumnos;
+    private List<Alumno> alumnos;
     private HashMap<String, Alumno> alumnosMap;
 
-    public Gestor(){
+    public Gestor() {
         alumnos = new ArrayList<>();
         alumnosMap = new HashMap<>();
-
-
     }
 
-
-    // agregar alumno
-    // solo se pueden agregar alumnos con un dni que no esta ya en la lista.
-
-    public void agregarAlumno(Alumno alumno){
-        if (alumnosMap.containsKey(alumno.getDni())){
-            System.out.println("no se puede agregar");
+    // agregar un alumno
+    // solo se pueden agregar alumnos con un dni que no este ya en la lista
+    public void agregarAlumno(Alumno alumno) {
+        /*
+        if(alumnosMap.containsKey(alumno.getDni())){
+            System.out.println("No se puede agregar");
         } else {
-            System.out.println("Añadido");
+            alumnosMap.put(alumno.getDni(),alumno);
+            System.out.println("Agregado correctamente");
         }
-
-    }
-
-    public void agregarAlumno1(Alumno alumno){
-        if (alumnosMap.put(alumno.getDni(),alumno)==null){
+        // el put retorna un null si lo puede agregar
+        // el put retorna un Alumno si no lo puede agregar
+        Alumno agregado = alumnosMap.put(alumno.getDni(), alumno);
+        if(agregado==null){
             System.out.println("Alumno agregado correctamente");
-        } else{
-            System.out.println("Alumno no agregado , dni duplicado");
-
-        }
-    }
-
-    public void agregarAlumnoArray(Alumno alumno){
-        for (Alumno item:alumnos){
-            if (item.getDni().equals(alumno.getDni())){
-                System.out.println("no puedo");
+        } else {
+            System.out.println("Alumno no agregado correctamente, dni duplicado");
+        }  */
+        /*
+        for (Alumno item: alumnos) {
+            if(item.getDni().equals(alumno.getDni())){
+                System.out.println("No puedo");
+                return;
             }
         }
+        alumnos.add(alumno);*/
+        /*
+        alumnos  ----------------
+        stream   ----------------
+        anyMatch true/false
+        filter   -------
 
+         */
+        boolean esta = alumnos.stream().anyMatch(item -> item.getDni().equals(alumno.getDni()));
+        if (alumnos.stream().anyMatch(item -> item.getDni().equals(alumno.getDni()))) {
+            System.out.println("El dni esta en la lista, no se puede agregar");
+        } else {
+            System.out.println("Usuario agregado con éxito");
+            alumnos.add(alumno);
+        }
+        /*alumnos.forEach(item -> {
+            if (item.getDni().equals(alumno.getDni())){
 
+            }
+        });*/
     }
 
-    public void agregarAlumnoLambda(Alumno alumno){
-    boolean esta = alumnos.stream().anyMatch(item -> item.getDni().equals(alumno.getDni()));
-    if (esta){
-        System.out.println("El dni esta en la lista, no se puede agregar");
-    } else {
-        System.out.println("Alumno agregado correctamente");
-        alumnos.add(alumno);
-    }
-
-    }
-
-    public void mostrarAlumnosArray(){
-        alumnos.forEach(Alumno :: mostrarDatos);
-        // asi muestro todos los alumnos
-        alumnos.forEach(item->{if (item.getNota()>=5){item.mostrarDatos();}});
-
-
-    }
-
-    public void calificarAlumno(){
-        alumnos.forEach(item ->{
-            if (item.getNota()==-1){
-                item.setNota((int)(Math.random()*11));
+    public void mostrarAlumnos() {
+        /*
+        alumnos.forEach(item -> {
+            if (item.getNota() >= 5) {
+                item.mostrarDatos();
             }
         });
 
+         */
+        alumnos.forEach(Alumno::mostrarDatos);
+        // alumnosMap.values().forEach(Alumno::mostrarDatos);
     }
 
- public void calcularMedia(){
+    public void calificarAlumnos() {
+        /*
+        alumnos ---------------
+        stream  x--x---x-------
+         */
+        alumnos.forEach(item -> {
+            if (item.getNota() == -1) {
+                item.setNota((int) (Math.random() * 11));
+            }
+        });
+    }
+
+    public void calcularMedia() {
         // variable sumatorio
-        // con un foreach
-        //sumo c
-        //divido
-     double acumulador=0;
-     //alumnos.stream().map(item->item.getNota()).forEach(item-> acumulador+=item)/size;
-     /* alumno -------
-     steam ----------
-     map -----------
-      */
-     double media = alumnos.stream().mapToDouble(Alumno ::getNota).sum()/alumnos.size();
-     System.out.println("La nota media es : "+media);
+        // foreach
+        // suma
+        // divido
+        double acumulador = 0;
+        // alumnos.stream().map(item->item.getNota()).forEach(item->acumulador+=item)/size;
+        // double media = alumnos.stream().mapToDouble(Alumno::getNota).sum()/alumnos.size();
+        OptionalDouble media = alumnos.stream().mapToDouble(Alumno::getNota).average();
+        // alumnos.stream().map(Alumno::getNota).mapToDouble().
+        System.out.println(media.getAsDouble());
+        /*
+        alumnos       ---------------
+        stream        ---------------
+        mapDouble     ---------------
+         */
+    }
+
+
+    // el numero de usuarios que han aprobado.
+
+    public long getNumeroAprobados() {
+        // recorro , pregunto , incremento contador.
+       /* forma tradicional
+        int nAprobados = 0;
+        for (Alumno alumno: alumnos){
+           if(alumno.getNota()>=5){
+               nAprobados++;
+           }
+        }
+
+        return nAprobados;
+    }*/
+
+        // con lambda
+        return alumnos.stream().filter(item -> item.getNota() > 4).count();
+
+    }
+
+    public List<Alumno> getAprobados() {
+        // para sacar el array, recorro, pregunto nota y añado a otro ArrayList
+        //modo tradicional
+        ArrayList<Alumno> filtrados = new ArrayList<>();
+        /*for (Alumno alumno:alumnos){
+            if (alumno.getNota()>=5){
+                filtrados.add(alumno);
+            }
+        }
+
+         alumnos.forEach(item->{
+             if (item.getNota()>=5){
+               filtrados.add(item);
+             }
+
+                 });
+
+
+    }*/
+
+        return (List<Alumno>) alumnos.stream()
+                .filter(item -> item.getNota() >= 5).toList();
+
+
+    }
+
+    public Optional<Alumno> getAlumnoByDni(String dni){
+        //en metodo normal lo haría recorriendo y preguntando en lambda seria asi:
+        // con filter obtengo un ---- (stream, copia de la lista ya filtrada)
+
+        return alumnos.stream().filter(item->item.getDni().equals(dni)).findFirst();
 
 
 
+    }
 
 
- }
+    public void ordenarPorNotas(){
+        // recorro y comparo de 2 en 2. Algoritmo de la burbuja.
+       alumnos = alumnos.stream().sorted(Comparator.comparingInt(Alumno ::getNota)).toList();
+
+    }
+
+
+    public void getAlumnosUmbral(int nota){
+        alumnos.stream().filter(item->item.getNota()>=nota).forEach(Alumno::mostrarDatos);
+    }
+
+
+    public void getAlumnosUmbral(BiPredicate<Alumno,Integer> predicate , int nota){
+        //recorrer - preguntar por el predicado - obtener una lista- recorrer el resultado - mostrar datos
+        alumnos.stream().filter(item-> predicate.test(item, nota)).forEach(Alumno::mostrarDatos );
+
+
+
+    }
+
+
 
 }

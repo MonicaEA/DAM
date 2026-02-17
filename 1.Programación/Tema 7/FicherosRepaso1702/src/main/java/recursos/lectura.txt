@@ -1,0 +1,2 @@
+esto es un ejemplo de lectura de ficheros.
+esto es otra linea en el fichero.

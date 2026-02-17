@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+/*Crea un programa que pida al usuario que introduzca un número como texto y lo
+convierta a entero usando Integer.parseInt().
+ Usa try-catch para capturar la excepción NumberFormatException si el usuario
+ introduce algo que no es un número válido.
+  El programa debe seguir pidiendo un número hasta que el usuario introduzca
+  uno válido.
+
+Ejemplo de salida por consola:
+
+```java
+Introduce un número: abc
+Error: Eso no es un número válido. Inténtalo de nuevo.
+Introduce un número: 12.5
+Error: Eso no es un número válido. Inténtalo de nuevo.
+Introduce un número: 42
+Has introducido el número: 42
+```*/
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+}

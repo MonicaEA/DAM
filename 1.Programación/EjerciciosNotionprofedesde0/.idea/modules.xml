@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/EjerciciosNotion/EjerciciosNotion.iml" filepath="$PROJECT_DIR$/EjerciciosNotion/EjerciciosNotion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/EjerciciosNotionprofedesde0.iml" filepath="$PROJECT_DIR$/.idea/EjerciciosNotionprofedesde0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejercicioluz/ejercicioluz.iml" filepath="$PROJECT_DIR$/ejercicioluz/ejercicioluz.iml" />
+    </modules>
+  </component>
+</project>

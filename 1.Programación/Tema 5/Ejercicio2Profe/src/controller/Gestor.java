@@ -39,6 +39,8 @@ public class Gestor {
 
         }
 
+        
+
      public void eliminarDeLaColeccion(int id){
         boolean encontrado = false;
 

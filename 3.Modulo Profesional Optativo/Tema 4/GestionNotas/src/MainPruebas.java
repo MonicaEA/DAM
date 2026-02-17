@@ -1,49 +1,8 @@
 import model.Alumno;
 
 import java.util.ArrayList;
-import java.util.function.BiFunction;
 
 public class MainPruebas {
-
-
-    public static void main(String[] args) {
-    /*Realiza una aplicación para poder gestionar las notas de los alumnos de
-una asignatura. Para ello el sistema contarña con un menú que permite la
-selección de la acción a realizar. Este menú contará con las siguientes
-opciones:
-a. Introducir alumno: el sistema pedirá dni, nombre, apellido y nota del
-alumno. en caso de una introducción incorrecta mostrará un
-mensaje de aviso. No se podrán meter dnis duplicados
-b. Buscar alumno nota: el sistema pedirá un dniy mostrará la nota de
-todos los alumnos con ese nombre
-c. Ver mejores expedientes: El sistema pedirá cual es el límite de
-búsqueda y mostrará las n mejores notas
-d. Ver expedientes superiores a una nota: El sistema pedirá una nota y
-mostrará los expedientes con mínimo esa nota
-e. Vaciar lista*/
-
-        ArrayList<Alumno> listaAlumnos = new ArrayList<>();
-        Alumno alumno1 = new Alumno("Borja", "Martin", "12345a",8);
-        Alumno alumno2 = new Alumno("Borja2", "Martin2", "12345a2",9);
-        Alumno alumno3 = new Alumno("Borja3", "Martin3", "12345a3",7);
-        Alumno alumno4 = new Alumno("Borja4", "Martin4", "12345a4",5);
-
-
-        listaAlumnos.add(alumno1);
-        listaAlumnos.add(alumno2);
-        listaAlumnos.add(alumno3);
-        listaAlumnos.add(alumno4);
-
-
-       /* for (Alumno item : listaAlumnos){
-import model.Alumno;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.BiFunction;
-
-public class Main {
 
     public static void main(String[] args) {
         ArrayList<Alumno> alumnos = new ArrayList<>();
@@ -85,27 +44,8 @@ public class Main {
         // foreach -> recorro y en cada iteracion obtengo un alumno
         // map -> recorro y transformo
 
-        BiFunction<Integer, Integer, Integer> funcionMulti = (p1, p2) -> p1 * p2;
-        /*
-        public int suma(int p, int p)
-         */
 
-        //alumnos.stream()
-             //   .map(Alumno::getNota)
-               // .forEach(nota -> System.out.println(funcionMulti.apply(nota,2)));
 
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
