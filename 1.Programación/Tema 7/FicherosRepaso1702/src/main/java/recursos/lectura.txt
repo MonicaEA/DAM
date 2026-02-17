@@ -1,2 +1,8 @@
 esto es un ejemplo de lectura de ficheros.
 esto es otra linea en el fichero.
+los flujos de ficheros:
+    entrantes : lecturas -> obtengo el contenido
+    salientes: escrituras -> saco el contenido de mi programa y lo llevo hacia fuera
+
+    File -> puede ser carpeta ( directory ) o fichero  (file)
+        si es fichero -> puedo crearlo con createNewFile()
