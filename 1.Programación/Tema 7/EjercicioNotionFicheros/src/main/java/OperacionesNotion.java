@@ -1,189 +1,133 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
-import java.util.Date;
-import java.util.Scanner;
+import java.io.*;
 
-public class OperacionesNotion {
+public class OperacionesNotion{
 
-    public void leerArchivo(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduce la ruta del archivo: ");
-        String ruta = scanner.nextLine();
+    // obtener datos de un fichero
+    public void leerDatosFichero() {
+        File file = new File("src/main/java/resources");
+        System.out.println("Existe " + file.exists());
+        System.out.println("Tamaño " + file.length());
+        System.out.println("Es fichero " + file.isFile());
+        System.out.println("Es carpeta " + file.isDirectory());
+        System.out.println("Ruta abs " + file.getAbsolutePath());
+    }
+    public void leerHijos(String path) {
+        File file = new File(path);
+        for (File s : file.listFiles()) {
+            System.out.println(s);
+            leerHijos(s.getAbsolutePath());
 
-        File file = new File(ruta);
+        }
+    }
 
-        try{
-            Scanner lector = new Scanner(file);
-            System.out.println("\nContenido del archivo:");
-            while(lector.hasNextLine()){
-                System.out.println(lector.nextLine());
+    public void crearFicheros(String path) {
+        File file = new File(path + "/ejemplo.txt");
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            System.out.println("Fallo en la escritura");
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public void crearDirectorio(String path) {
+        File file = new File(path + "/ejemplo/cosa/otra/mia");
+
+        if (!file.exists()) {
+            file.mkdir();
+            // porque no hay excepcion a capturar
+            // file.mkdirs();
+        }
+    }
+
+    public void lecturaASCII(String path) {
+        File file = new File(path);
+        FileReader reader = null;
+        try {
+            reader = new FileReader(file);
+            // FileReader -> caracter a caracter
+            int codigo = -1;
+
+            while ((codigo = reader.read()) != -1) {
+                // int -> char
+                System.out.print(codigo);
+                System.out.print(" - ");
+                System.out.print((char) codigo);
+                System.out.println();
             }
-            lector.close();
-        } catch (FileNotFoundException e){
-            System.out.println("No se encontro el archivo");
+
+
+        } catch (FileNotFoundException e) {
+            System.out.println("No se encuentra la ruta a leer");
+            // intenta leer otra ruta
+        } catch (IOException e) {
+            System.out.println("Error al leer, no hay permisos");
+        } finally {
+            try {
+                reader.close();
+            } catch (IOException | NullPointerException e) {
+                System.out.println("Error en el cerrado");
+            }
 
         }
 
+    }
+
+    public void lecturaLinea(String path) {
+        File file = new File(path);
+        BufferedReader bufferedReader = null;
+
+        try {
+            bufferedReader = new BufferedReader(new FileReader(file));
+            String linea = null;
+            while ((linea = bufferedReader.readLine())!=null){
+                System.out.println(linea);
+            }
 
 
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Error en la lectura de la ruta");
+        } catch (IOException e) {
+            System.out.println("Error en el modo del fichero, estas en modo lectura");
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException | NullPointerException e) {
+                System.out.println("Error en el cerradp del fichero");
+            }
+
+        }
 
 
     }
 
-    public void buscarPalabra(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduce la ruta");
-        String ruta = scanner.next();
+    public void lectorCodigos(String path){
+        File file = new File(path);
+        BufferedReader bufferedReader =null;
 
-        System.out.println("Palabra a buscar:");
-        String palabra = scanner.next();
-
-        int contador = 0;
-        File file = new File(ruta);
-        try{
-            Scanner lector = new Scanner(file);
-            while(lector.hasNext()){
-                String palabraActual = lector.next();
-                if (palabraActual.equalsIgnoreCase(palabra)){
-                    contador++;
-                }
+        try {
+            bufferedReader = new BufferedReader(new FileReader(file));
+            String linea = bufferedReader.readLine();
+            String[] codigos = linea.split(" ");
+            for (String codigo: codigos) {
+                // System.out.println(codigo);
+                int numero = Integer.parseInt(codigo);
+                System.out.print((char) numero);
             }
-            System.out.println("\nLa palabra " + palabra + " aparece " + contador + " veces");
-            lector.close();
 
-        }catch(FileNotFoundException e){
-            System.out.println("Error no se puede encontrar el archivo");
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichero no encontrado");
+        } catch (IOException e) {
+            System.out.println("Fallo en la lectura");
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException | NullPointerException e) {
+                System.out.println("Error de cifrado");
+            }
         }
-
-
-
-
-
     }
-
-    public void copiarUnArchivo(){
-
-    Scanner scanner = new Scanner(System.in);
-        System.out.println("Indica la ruta del archivo: ");
-        String rutaOrigen = scanner.next();
-
-        System.out.println("Indica la ruta de destino: ");
-        String rutaDestino = scanner.next();
-
-        try{
-           Path origenPath = Path.of(rutaOrigen);
-           Path destinoPath = Path.of(rutaDestino);
-
-            Files.copy(origenPath,destinoPath, StandardCopyOption.REPLACE_EXISTING);
-            System.out.println("Archivo copiado correctamente");
-
-    } catch (Exception e) {
-            System.out.println("Error al copiar: "+ e.getMessage());
-        }
-
-
-
-
 
 }
-
-    public void obtenerInformacion(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduce la ruta del archivo: ");
-        String ruta = scanner.nextLine();
-
-        File archivo = new File(ruta);
-        if (archivo.exists()){
-            System.out.println("Tamaño: "+ archivo.length());
-            System.out.println("Última modificación: "+ archivo.lastModified());
-            System.out.println("Permisos: Lectura "+archivo.canRead()+ " Escritura: "+archivo.canWrite()+ " Ejecución: "+archivo.canExecute());
-            System.out.println("Archivo oculto: "+ archivo.isHidden());
-            System.out.println("Ruta absoluta: "+ archivo.getAbsolutePath());
-        }else {
-            System.out.println("El archivo no existe.");
-        }
-
-
-
-    }
-
-    public void contarLineas(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Indica la ruta del archivo: ");
-        String ruta = scanner.nextLine();
-
-        File archivo = new File(ruta);
-
-        try{
-            Scanner lector = new Scanner(archivo);
-            int contador =  0;
-
-            while(lector.hasNextLine()){
-                lector.nextLine();
-                contador++;
-            }
-            System.out.println("El archivo contiene " + contador + " líneas.");
-        } catch (FileNotFoundException e) {
-            System.out.println("Error: el archivo no existe.");
-        }
-
-
-
-
-    }
-
-    public void crearArchivoCSV() {
-        String nombreArchivo = "estudiantes.csv";
-
-        // Usamos try-with-resources para que el archivo se cierre solo (más "fino")
-        try (PrintWriter escritor = new PrintWriter(nombreArchivo)) {
-
-            escritor.println("Nombre,Edad,Calificación");
-            escritor.println("Ana,20,9.5");
-            escritor.println("Juan,25,7.0");
-            // Cambiamos print por println para no romper el formato de la última fila
-            escritor.println("Pepe,32,5.5");
-
-            System.out.println("Archivo creado correctamente.");
-
-        } catch (FileNotFoundException e) {
-            // Somos específicos con la excepción: el archivo no se pudo crear/abrir
-            System.out.println("Error: No se pudo crear el archivo. Verifique los permisos.");
-        }
-    }
-
-    public void exploracionBasica(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Indica la ruta a explorar");
-        String ruta = scanner.nextLine();
-
-        File file = new File(ruta);
-
-            if (file.isDirectory()) {
-                File[] lista = file.listFiles();
-                for (File item : lista) {
-                    Date fecha = new Date(item.lastModified());
-                    if (item.isDirectory()) {
-                        System.out.println("Directorio: " + item.getName() + " " + item.length() + " " + fecha);
-                    }
-
-                 else{
-                    System.out.println("Archivo: " + item.getName() + " " + item.length() + " " + fecha);
-
-
-                }
-            }
-
-            }else {
-                System.out.println("No es un directorio.");
-            }
-
-        }
-
-    }
-
-

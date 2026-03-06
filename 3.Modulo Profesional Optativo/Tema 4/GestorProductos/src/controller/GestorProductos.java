@@ -2,6 +2,11 @@ package controller;
 
 import model.Producto;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.*;
 import java.util.function.BiPredicate;
 
@@ -56,6 +61,46 @@ public class GestorProductos {
                 .orElse(0.0);
     }
 
+
+    public DoubleSummaryStatistics getEstadisticas(){
+
+
+        return this.productos.stream()
+                .mapToDouble(Producto::getPrecio)
+                .summaryStatistics();
+    }
+
+    public void consultarProductos() {
+        String urlConsulta = "https://dummyjson.com/products";
+        // 1. simular que abro el navegador.
+        HttpClient client = null;
+try{
+        client = HttpClient.newHttpClient();
+
+        //2. haz la petición
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(urlConsulta))
+                .GET().build();
+
+
+        // 3. Lanza y opten respuesta
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+    }catch(InterruptedException | IOException e){
+            System.out.println("Error en el proceso de conexion con el servidor");
+        } finally {
+    try{
+        client.close();
+    }catch(Exception e){
+        System.out.println("no se puede cerrar");
+    }
+
+        }
+        //TODO finally con clase
+
+
+
+    }
 
     public long getNumeroProductosCaros(double limite){
         return productos.stream().filter(item->item.getPrecio()>=limite).count();

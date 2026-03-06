@@ -17,6 +17,9 @@ public class Main {
             item.getPrecio()>val && item.getCategoria() == Categoria.ROPA
         ,90.00);
 
+       // System.out.println(gestor.getEstadisticas());
+        gestor.consultarProductos();
+
 
 
 
