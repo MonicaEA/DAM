@@ -1,0 +1,81 @@
+.root {
+    -fx-background-color: #121212;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+#lblTitulo {
+    -fx-font-size: 40px;
+    -fx-font-family: "Georgia", serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: #a10000;
+    -fx-padding: 30 0 20 0;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(161, 0, 0, 0.4), 15, 0, 0, 6);
+}
+
+.button {
+    -fx-background-color: #262626;
+    -fx-text-fill: #e6e6e6;
+    -fx-font-size: 13px;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+    -fx-transition: 0.3s;
+    -fx-border-color: #333333;
+    -fx-border-radius: 5;
+    -fx-wrap-text: true;
+    -fx-alignment: center;
+}
+
+
+.button:hover {
+    -fx-background-color: #4d0000;
+    -fx-text-fill: #ffcccc;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+#btnVolver {
+    -fx-background-color: #333333;
+    -fx-pref-width: 180px;
+}
+#btnVolver:hover {
+    -fx-background-color: #404040;
+}
+
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #333333;
+    -fx-padding: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 15, 0, 0, 5);
+}
+
+.table-view .column-header {
+    -fx-background-color: #000000;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-size: 45px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #a10000;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+}
+
+
+.table-row-cell .text {
+    -fx-fill: #000000;
+    -fx-font-size: 13px;
+}
+
+
+.table-row-cell:selected {
+    -fx-background-color: linear-gradient(to right, #660000, #4d0000);
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: white;
+}

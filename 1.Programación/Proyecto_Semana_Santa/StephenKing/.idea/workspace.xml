@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e7b34c4d-95e0-457f-bd0e-39b77562a58a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ficheros/favoritos.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/APIController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/BibliotecaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/FileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllerView/BibliotecaViewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllerView/InicioViewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Biblioteca.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Libro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AppGrafica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainGrafico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/biblioteca.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/inicio.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MonicaEA&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MonicaEA/DAM.git&quot;,
+    &quot;accountId&quot;: &quot;3b72dc03-6893-446b-bf4c-781f54af1882&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3BWjumrI55l6aGziIYMIKYj5hZo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AppGrafica.executor": "Run",
+    "Application.BibliotecaAPP.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MainGrafico.executor": "Run",
+    "Maven.StephenKingAPP [clean].executor": "Run",
+    "Maven.StephenKingAPP [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DAM\Github\DAM\1.Programación\Proyecto_Semana_Santa\StephenKing" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainGrafico">
+    <configuration name="AppGrafica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.AppGrafica" />
+      <module name="StephenKing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BibliotecaAPP" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="view.Main" />
+      <module name="StephenKing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainGrafico" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.MainGrafico" />
+      <module name="StephenKing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.BibliotecaAPP" />
+      <item itemvalue="Application.AppGrafica" />
+      <item itemvalue="Application.MainGrafico" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainGrafico" />
+        <item itemvalue="Application.AppGrafica" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7b34c4d-95e0-457f-bd0e-39b77562a58a" name="Changes" comment="" />
+      <created>1774611946092</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774611946092</updated>
+    </task>
+    <servers />
+  </component>
+</project>
